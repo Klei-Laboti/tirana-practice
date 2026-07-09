@@ -1,33 +1,26 @@
-"""Generate fake apartment listing data for Tirana."""
-
-import csv
-import os
+import pandas as pd
 import random
 
 random.seed(42)
 
-ZONES = ["Bllok", "Komuna e Parisit", "Ali Demi", "Astir",
-         "Yzberisht", "Don Bosko", "Fresku", "21 Dhjetori"]
+zones = ["Bllok", "Komuna e Parisit", "Ali Demi", "Astir", "Yzberisht",
+         "21 Dhjetori", "Fresk", "Medreseja", "Selvia", "Kinostudio"]
 
-LISTINGS = []
-for _ in range(50):
-    zone = random.choice(ZONES)
+apartments = []
+for _ in range(100):
+    zone = random.choice(zones)
     rooms = random.randint(1, 4)
-    sqm = random.randint(40, 130)
-    price = round(sqm * random.uniform(800, 2200) + random.gauss(0, 5000))
-    LISTINGS.append({
+    sqm = random.randint(40, 150)
+    price_per_sqm = random.randint(800, 2500)
+    price = sqm * price_per_sqm
+    apartments.append({
         "zone": zone,
         "rooms": rooms,
         "sqm": sqm,
-        "price": price
+        "price": price,
+        "price_per_sqm": price_per_sqm
     })
 
-os.makedirs("data", exist_ok=True)
-output_path = os.path.join("data", "apartments.csv")
-
-with open(output_path, "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["zone", "rooms", "sqm", "price"])
-    writer.writeheader()
-    writer.writerows(LISTINGS)
-
-print(f"Generated {len(LISTINGS)} listings -> {output_path}")
+df = pd.DataFrame(apartments)
+df.to_csv("data/apartments.csv", index=False)
+print(f"Generated {len(df)} apartments -> data/apartments.csv")

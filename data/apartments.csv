@@ -1,51 +1,101 @@
-zone,rooms,sqm,price
-Komuna e Parisit,1,75,87201
-Komuna e Parisit,4,44,38823
-Astir,2,104,163500
-Fresku,2,97,154644
-Bllok,2,129,178918
-Don Bosko,1,51,71355
-Don Bosko,3,117,142269
-Komuna e Parisit,4,50,80138
-Don Bosko,2,130,112103
-Komuna e Parisit,2,52,61966
-21 Dhjetori,3,60,80087
-Komuna e Parisit,2,108,200458
-Ali Demi,4,88,110467
-Astir,3,47,49223
-Bllok,3,91,109814
-Don Bosko,2,123,195975
-21 Dhjetori,2,73,72474
-Fresku,4,86,88987
-Ali Demi,4,51,96614
-Ali Demi,4,116,100911
-Fresku,4,107,111976
-Komuna e Parisit,3,122,151781
-Yzberisht,4,60,95899
-Yzberisht,2,104,213156
-Yzberisht,2,59,84620
-Bllok,3,102,94903
-Don Bosko,3,70,70405
-Komuna e Parisit,4,48,95716
-Ali Demi,2,124,177976
-Fresku,2,109,201245
-Astir,3,91,196423
-21 Dhjetori,1,71,74794
-Don Bosko,1,115,180671
-Bllok,2,48,98927
-Don Bosko,1,105,117295
-Ali Demi,4,71,131759
-Fresku,2,52,43893
-21 Dhjetori,1,126,218273
-Komuna e Parisit,1,91,166326
-Astir,2,108,151946
-Fresku,2,75,109971
-Komuna e Parisit,1,123,269072
-Bllok,1,70,68845
-Fresku,1,61,81477
-Fresku,3,98,114870
-21 Dhjetori,2,64,70140
-Bllok,1,80,65299
-Ali Demi,1,105,92794
-Ali Demi,1,116,107123
-Astir,1,119,104978
+zone,rooms,sqm,price,price_per_sqm
+Komuna e Parisit,1,134,182642,1363
+Astir,2,57,131556,2308
+Komuna e Parisit,1,115,191360,1664
+Bllok,1,51,63597,1247
+Astir,1,111,133977,1207
+Selvia,4,68,116892,1719
+Kinostudio,3,143,116259,813
+Ali Demi,4,83,113627,1369
+Ali Demi,2,137,203993,1489
+Komuna e Parisit,1,88,87824,998
+21 Dhjetori,3,117,156897,1341
+Bllok,4,108,113940,1055
+Fresk,1,110,154000,1400
+Kinostudio,3,113,134809,1193
+Komuna e Parisit,1,124,156984,1266
+Yzberisht,1,149,190124,1276
+Komuna e Parisit,4,75,129600,1728
+21 Dhjetori,2,87,132849,1527
+Astir,3,129,283671,2199
+Komuna e Parisit,2,108,247644,2293
+Astir,2,99,156123,1577
+Yzberisht,2,127,185928,1464
+Bllok,2,145,125425,865
+21 Dhjetori,4,74,69190,935
+Astir,3,67,143514,2142
+Medreseja,4,122,212158,1739
+Ali Demi,3,57,74385,1305
+Selvia,3,135,269595,1997
+Fresk,4,86,107414,1249
+Ali Demi,4,51,119697,2347
+Bllok,1,59,123015,2085
+Ali Demi,4,116,107880,930
+Fresk,4,116,203928,1758
+Selvia,3,110,90530,823
+Komuna e Parisit,3,138,291456,2112
+21 Dhjetori,1,77,130130,1690
+Ali Demi,4,40,91120,2278
+Yzberisht,2,104,105768,1017
+Yzberisht,2,59,92335,1565
+Ali Demi,1,116,169708,1463
+Medreseja,1,54,83322,1543
+Yzberisht,2,47,60771,1293
+Kinostudio,1,50,114900,2298
+Medreseja,1,137,258930,1890
+Ali Demi,2,124,219852,1773
+Selvia,2,73,137240,1880
+Kinostudio,4,67,127568,1904
+Astir,3,91,197925,2175
+21 Dhjetori,4,106,182744,1724
+Komuna e Parisit,2,68,63308,931
+21 Dhjetori,1,115,222410,1934
+Astir,2,40,37800,945
+Bllok,2,48,41472,864
+21 Dhjetori,1,105,135135,1287
+Yzberisht,4,67,127568,1904
+Ali Demi,4,71,170826,2406
+Medreseja,4,64,63552,993
+Komuna e Parisit,4,85,141695,1667
+Fresk,4,150,343950,2293
+Bllok,1,47,76328,1624
+21 Dhjetori,1,71,84632,1192
+Astir,4,57,94848,1664
+Ali Demi,3,99,129789,1311
+Komuna e Parisit,4,143,275561,1927
+Komuna e Parisit,1,123,234561,1907
+Bllok,1,136,174624,1284
+Ali Demi,4,102,182070,1785
+Astir,4,47,53439,1137
+Fresk,1,89,119527,1343
+Medreseja,3,94,209244,2226
+Selvia,4,59,70092,1188
+Yzberisht,2,47,93342,1986
+Selvia,1,135,194670,1442
+Bllok,1,114,202464,1776
+Selvia,2,47,86480,1840
+Komuna e Parisit,2,48,96864,2018
+Komuna e Parisit,2,91,95095,1045
+Kinostudio,2,114,229938,2017
+Bllok,1,93,199578,2146
+Kinostudio,3,73,88914,1218
+21 Dhjetori,2,73,117530,1610
+Ali Demi,3,98,141806,1447
+Komuna e Parisit,1,98,203056,2072
+Kinostudio,1,49,93149,1901
+Astir,3,56,84784,1514
+Komuna e Parisit,2,87,120321,1383
+Ali Demi,4,146,279152,1912
+Yzberisht,1,125,309125,2473
+Selvia,3,124,125488,1012
+Ali Demi,3,54,55026,1019
+Selvia,2,74,101898,1377
+Kinostudio,2,131,196762,1502
+Astir,3,104,187200,1800
+Yzberisht,1,51,107049,2099
+Fresk,3,45,36315,807
+21 Dhjetori,2,121,161656,1336
+Ali Demi,4,110,246950,2245
+Fresk,1,54,51516,954
+Ali Demi,1,146,227176,1556
+Kinostudio,2,95,100795,1061

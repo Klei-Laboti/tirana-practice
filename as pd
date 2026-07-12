@@ -1,0 +1,18 @@
+[33m1d00b06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mv1.2[m[33m, [m[1;31morigin/main[m[33m)[m add prediction script
+[33m7b32a79[m train and save a linear regression model
+[33m9bdc98a[m add models folder
+[33m28453d8[m add scikit-learn dependency
+[33m20051cc[m regenerate dataset with bedrooms, bathrooms, floor
+[33m6200c77[m Fix data generation and regenerate outputs
+[33m744d60b[m[33m ([m[1;33mtag: [m[1;33mv1.1[m[33m)[m add scatter plot visualization
+[33mc8eb798[m add deal rating script
+[33m4ada974[m add room filter script
+[33m1f7c3ff[m[33m ([m[1;33mtag: [m[1;33mv1.0[m[33m)[m final cleanup
+[33md1fea17[m add visualization script with charts
+[33m3bcaea4[m add analysis script with deal detection
+[33m312e476[m add data exploration script
+[33mf787e77[m add data generation script
+[33m8e38363[m add project dependencies
+[33mb09a8ac[m ignore virtual environment
+[33mf1f55a7[m add project folder structure
+[33m505da13[m initial commit

@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
   <meta charset="UTF-8">
-  <title>Listing #{{ id }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listing #{{ id }} — {{ listing.zone }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <p><a href="/">&larr; Kthehu te lista</a></p>
 
-  <h1>Apartament ne {{ listing.zone }}</h1>
+  <header>
+    <h1>{{ listing.zone }}</h1>
+    <p>Listing #{{ id }}</p>
+  </header>
 
-  <ul>
-    <li>Zona: {{ listing.zone }}</li>
-    <li>Dhoma gjumi: {{ listing.bedrooms }}</li>
-    <li>Banjo: {{ listing.bathrooms }}</li>
-    <li>Kati: {{ listing.floor }}</li>
-    <li>Siperfaqja: {{ listing.sqm }} m2</li>
-    <li>Cmimi: {{ "{:,}".format(listing.price) }} EUR</li>
-    <li>Cmimi per m2: {{ "{:,}".format(listing.price_per_sqm) }} EUR</li>
-  </ul>
+  <main>
+    <a class="back" href="{{ url_for('home') }}">← Kthehu te lista</a>
+
+    <div class="detail">
+      <h2>Apartament në {{ listing.zone }}</h2>
+      <span class="badge {{ listing.badge_class }}">{{ listing.badge_label }}</span>
+
+      <div class="big-price">{{ "{:,}".format(listing.price) }} €</div>
+
+      <ul class="rows">
+        <li><span class="k">Çmimi për m²</span><span class="v">{{ "{:,}".format(listing.price_per_sqm) }} €</span></li>
+        <li><span class="k">Mesatarja e tregut</span><span class="v">{{ "{:,}".format(avg) }} €/m²</span></li>
+        <li><span class="k">Sipërfaqja</span><span class="v">{{ listing.sqm }} m²</span></li>
+        <li><span class="k">Dhoma gjumi</span><span class="v">{{ listing.bedrooms }}</span></li>
+        <li><span class="k">Banjo</span><span class="v">{{ listing.bathrooms }}</span></li>
+        <li><span class="k">Kati</span><span class="v">{{ listing.floor }}</span></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>Tirana Scout · Build with AI · Holberton School</footer>
+
 </body>
 </html>

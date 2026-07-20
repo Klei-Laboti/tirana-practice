@@ -1,40 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
   <meta charset="UTF-8">
-  <title>Tirana Scout — Listings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirana Scout — Listimet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Apartamentet ne Tirane</h1>
-  <p>Gjithsej {{ count }} listime.</p>
 
-  <table border="1" cellpadding="6">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Zona</th>
-        <th>Dhoma</th>
-        <th>Banjo</th>
-        <th>Kati</th>
-        <th>m2</th>
-        <th>Cmimi (EUR)</th>
-        <th>EUR/m2</th>
-      </tr>
-    </thead>
-    <tbody>
+  <header>
+    <h1>Tirana Scout</h1>
+    <p>Apartamente në Tiranë, të vlerësuara sipas çmimit për m²</p>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="stat">
+        <div class="label">Listime</div>
+        <div class="value">{{ stats.count }}</div>
+      </div>
+      <div class="stat">
+        <div class="label">Zona</div>
+        <div class="value">{{ stats.zones }}</div>
+      </div>
+      <div class="stat">
+        <div class="label">Mesatarja / m²</div>
+        <div class="value">{{ "{:,}".format(stats.avg_sqm) }} €</div>
+      </div>
+      <div class="stat">
+        <div class="label">Çmimi mesatar</div>
+        <div class="value">{{ "{:,}".format(stats.avg_price) }} €</div>
+      </div>
+    </div>
+
+    <div class="grid">
       {% for a in listings %}
-      <tr>
-        <td><a href="/listing/{{ loop.index0 }}">{{ loop.index0 }}</a></td>
-        <td>{{ a.zone }}</td>
-        <td>{{ a.bedrooms }}</td>
-        <td>{{ a.bathrooms }}</td>
-        <td>{{ a.floor }}</td>
-        <td>{{ a.sqm }}</td>
-        <td>{{ "{:,}".format(a.price) }}</td>
-        <td>{{ "{:,}".format(a.price_per_sqm) }}</td>
-      </tr>
+      <a class="card" href="{{ url_for('listing_detail', id=a.id) }}">
+        <div class="card-top">
+          <span class="zone">{{ a.zone }}</span>
+          <span class="badge {{ a.badge_class }}">{{ a.badge_label }}</span>
+        </div>
+        <div class="price">{{ "{:,}".format(a.price) }} €</div>
+        <div class="per-sqm">{{ "{:,}".format(a.price_per_sqm) }} €/m²</div>
+        <div class="specs">
+          <span class="spec"><strong>{{ a.bedrooms }}</strong> dhoma</span>
+          <span class="spec"><strong>{{ a.bathrooms }}</strong> banjo</span>
+          <span class="spec"><strong>{{ a.sqm }}</strong> m²</span>
+          <span class="spec">Kati <strong>{{ a.floor }}</strong></span>
+        </div>
+      </a>
       {% endfor %}
-    </tbody>
-  </table>
+    </div>
+  </main>
+
+  <footer>Tirana Scout · Build with AI · Holberton School</footer>
+
 </body>
 </html>

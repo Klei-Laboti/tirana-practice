@@ -8,11 +8,33 @@ def load_listings():
     return pd.read_csv("data/apartments.csv")
 
 
+def grade(price_per_sqm, avg):
+    if price_per_sqm < avg * 0.85:
+        return "deal", "Oferte"
+    elif price_per_sqm > avg * 1.15:
+        return "high", "I shtrenjte"
+    return "fair", "Normal"
+
+
 @app.route("/")
 def home():
     df = load_listings()
-    listings = df.to_dict(orient="records")
-    return render_template("index.html", listings=listings, count=len(listings))
+    avg = df["price_per_sqm"].mean()
+    listings = []
+    for i, row in df.iterrows():
+        css_class, label = grade(row["price_per_sqm"], avg)
+        item = row.to_dict()
+        item["id"] = i
+        item["badge_class"] = css_class
+        item["badge_label"] = label
+        listings.append(item)
+    stats = {
+        "count": len(df),
+        "avg_sqm": round(df["price_per_sqm"].mean()),
+        "avg_price": round(df["price"].mean()),
+        "zones": df["zone"].nunique(),
+    }
+    return render_template("index.html", listings=listings, stats=stats)
 
 
 @app.route("/listing/<int:id>")
@@ -20,8 +42,13 @@ def listing_detail(id):
     df = load_listings()
     if id < 0 or id >= len(df):
         abort(404)
-    listing = df.iloc[id].to_dict()
-    return render_template("listing.html", listing=listing, id=id)
+    avg = df["price_per_sqm"].mean()
+    row = df.iloc[id]
+    css_class, label = grade(row["price_per_sqm"], avg)
+    listing = row.to_dict()
+    listing["badge_class"] = css_class
+    listing["badge_label"] = label
+    return render_template("listing.html", listing=listing, id=id, avg=round(avg))
 
 
 if __name__ == "__main__":

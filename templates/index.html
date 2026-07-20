@@ -24,7 +24,7 @@
     <tbody>
       {% for a in listings %}
       <tr>
-        <td>{{ loop.index0 }}</td>
+        <td><a href="/listing/{{ loop.index0 }}">{{ loop.index0 }}</a></td>
         <td>{{ a.zone }}</td>
         <td>{{ a.bedrooms }}</td>
         <td>{{ a.bathrooms }}</td>

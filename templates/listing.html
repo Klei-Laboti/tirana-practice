@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Listing #{{ id }}</title>
+</head>
+<body>
+  <p><a href="/">&larr; Kthehu te lista</a></p>
+
+  <h1>Apartament ne {{ listing.zone }}</h1>
+
+  <ul>
+    <li>Zona: {{ listing.zone }}</li>
+    <li>Dhoma gjumi: {{ listing.bedrooms }}</li>
+    <li>Banjo: {{ listing.bathrooms }}</li>
+    <li>Kati: {{ listing.floor }}</li>
+    <li>Siperfaqja: {{ listing.sqm }} m2</li>
+    <li>Cmimi: {{ "{:,}".format(listing.price) }} EUR</li>
+    <li>Cmimi per m2: {{ "{:,}".format(listing.price_per_sqm) }} EUR</li>
+  </ul>
+</body>
+</html>

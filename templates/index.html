@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tirana Scout</title>
+  <title>Tirana Scout — Listings</title>
 </head>
 <body>
-  <h1>{{ greeting }}</h1>
-  <p>Ky tekst vjen nga nje template Jinja.</p>
+  <h1>Apartamentet ne Tirane</h1>
+  <p>Gjithsej {{ count }} listime.</p>
+
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Zona</th>
+        <th>Dhoma</th>
+        <th>Banjo</th>
+        <th>Kati</th>
+        <th>m2</th>
+        <th>Cmimi (EUR)</th>
+        <th>EUR/m2</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in listings %}
+      <tr>
+        <td>{{ loop.index0 }}</td>
+        <td>{{ a.zone }}</td>
+        <td>{{ a.bedrooms }}</td>
+        <td>{{ a.bathrooms }}</td>
+        <td>{{ a.floor }}</td>
+        <td>{{ a.sqm }}</td>
+        <td>{{ "{:,}".format(a.price) }}</td>
+        <td>{{ "{:,}".format(a.price_per_sqm) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
 </html>

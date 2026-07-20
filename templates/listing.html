@@ -17,15 +17,34 @@
     <a class="back" href="{{ url_for('home') }}">← Kthehu te lista</a>
 
     <div class="detail">
-      <h2>Apartament në {{ listing.zone }}</h2>
+      <h2>Apartament ne {{ listing.zone }}</h2>
       <span class="badge {{ listing.badge_class }}">{{ listing.badge_label }}</span>
 
       <div class="big-price">{{ "{:,}".format(listing.price) }} €</div>
 
+      {% if predicted %}
       <ul class="rows">
-        <li><span class="k">Çmimi për m²</span><span class="v">{{ "{:,}".format(listing.price_per_sqm) }} €</span></li>
+        <li>
+          <span class="k">Cmimi i parashikuar nga modeli</span>
+          <span class="v">{{ "{:,}".format(predicted) }} €</span>
+        </li>
+        <li>
+          <span class="k">Diferenca</span>
+          <span class="v">
+            {% if diff_pct > 0 %}
+              {{ diff_pct }}% nen parashikimin
+            {% else %}
+              {{ diff_pct|abs }}% mbi parashikimin
+            {% endif %}
+          </span>
+        </li>
+      </ul>
+      {% endif %}
+
+      <ul class="rows">
+        <li><span class="k">Cmimi per m²</span><span class="v">{{ "{:,}".format(listing.price_per_sqm) }} €</span></li>
         <li><span class="k">Mesatarja e tregut</span><span class="v">{{ "{:,}".format(avg) }} €/m²</span></li>
-        <li><span class="k">Sipërfaqja</span><span class="v">{{ listing.sqm }} m²</span></li>
+        <li><span class="k">Siperfaqja</span><span class="v">{{ listing.sqm }} m²</span></li>
         <li><span class="k">Dhoma gjumi</span><span class="v">{{ listing.bedrooms }}</span></li>
         <li><span class="k">Banjo</span><span class="v">{{ listing.bathrooms }}</span></li>
         <li><span class="k">Kati</span><span class="v">{{ listing.floor }}</span></li>
